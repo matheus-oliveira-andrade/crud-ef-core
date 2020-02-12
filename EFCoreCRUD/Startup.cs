@@ -6,6 +6,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,13 +27,14 @@ namespace EFCoreCRUD
         {
             services.AddControllersWithViews();
 
+            services.AddDbContext<Models.Contexts.EFCoreCRUDContext>(options => options.UseSqlServer(Configuration["Connection:ConexaoPrincipal"]));
 
             /*
              Referencia: http://docs.automapper.org/en/stable/Configuration.html             
              */
 
             var config = new MapperConfiguration(cfg => 
-            {
+            {                
                 cfg.AddProfile<Mapeamentos>();             
             });
 
@@ -65,7 +67,7 @@ namespace EFCoreCRUD
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Usuario}/{action=Index}/{id?}");
             });
         }
     }
