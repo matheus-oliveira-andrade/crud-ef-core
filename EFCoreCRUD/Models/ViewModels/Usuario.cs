@@ -9,7 +9,7 @@ namespace EFCoreCRUD.Models.ViewModels
     public class Usuario
     {
         [Key]
-        public int Codigo { get; set; }
+        public int? Codigo { get; set; }
 
         [Required]
         [Display(Name = "Nome")]

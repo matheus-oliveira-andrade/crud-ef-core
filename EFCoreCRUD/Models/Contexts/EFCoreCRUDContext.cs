@@ -30,7 +30,7 @@ namespace EFCoreCRUD.Models.Contexts
                 entidade.Property(u => u.Nome)
                     .IsRequired()
                     .HasMaxLength(60)
-                    .HasColumnType("varchar");
+                    .HasColumnType("varchar(60)");
 
                 entidade.Property(u => u.Idade)
                     .IsRequired()
@@ -39,21 +39,21 @@ namespace EFCoreCRUD.Models.Contexts
                 entidade.Property(u => u.Endereco)
                     .IsRequired()
                     .HasMaxLength(1000)
-                    .HasColumnType("varchar");
+                    .HasColumnType("varchar(1000)");
 
                 entidade.Property(u => u.Email)
                     .IsRequired()
                     .HasMaxLength(30)
-                    .HasColumnType("varchar");
+                    .HasColumnType("varchar(30)");
 
                 entidade.Property(u => u.Telefone)
                     .IsRequired()
                     .HasMaxLength(20)
-                    .HasColumnType("varchar");
+                    .HasColumnType("varchar(20)");
 
                 entidade.Property(u => u.InfoComplentares)
                     .HasMaxLength(1000)
-                    .HasColumnType("varchar");
+                    .HasColumnType("varchar(1000)");
             });
         }
     }

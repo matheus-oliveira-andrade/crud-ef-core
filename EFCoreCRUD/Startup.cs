@@ -34,7 +34,10 @@ namespace EFCoreCRUD
              */
 
             var config = new MapperConfiguration(cfg => 
-            {                
+            {
+                //cfg.CreateMap<Models.Usuario, Models.ViewModels.Usuario>();
+                //cfg.CreateMap<Models.ViewModels.Usuario, Models.Usuario>();
+
                 cfg.AddProfile<Mapeamentos>();             
             });
 

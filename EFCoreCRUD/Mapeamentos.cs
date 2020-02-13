@@ -10,8 +10,9 @@ namespace EFCoreCRUD
     public class Mapeamentos : Profile
     {
         public Mapeamentos()
-        {            
+        {
             CreateMap<Models.Usuario, Models.ViewModels.Usuario>();
+            CreateMap<Models.ViewModels.Usuario, Models.Usuario>();
         }
 
     }

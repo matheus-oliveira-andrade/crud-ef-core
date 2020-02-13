@@ -1,19 +1,19 @@
 ﻿@model EFCoreCRUD.Models.ViewModels.Usuario
 
 @{
-    ViewData["Title"] = "Inserir";
+    ViewData["Title"] = "Editar";
 }
 
-<h1>Inserir</h1>
+<h1>Editar</h1>
 
 <h4>Usuario</h4>
 <hr />
-<form asp-action="Inserir" method="post">
+<form asp-action="Editar" method="post">
     @await Html.PartialAsync("_Visualizar")
     <div class="row">
         <div class="col-md-12 text-right">
             <a asp-action="Index" class="btn btn-secondary">Voltar</a>
-            <button class="btn btn-secondary" type="reset">Limpar</button>
+            <button class="btn btn-secondary" type="reset">Excluir</button>
             <button class="btn btn-primary" type="submit">Salvar</button>
         </div>
     </div>
