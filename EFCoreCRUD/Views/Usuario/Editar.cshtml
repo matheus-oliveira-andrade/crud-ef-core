@@ -6,15 +6,15 @@
 
 <h1>Editar</h1>
 
-<h4>Usuario</h4>
+<h4>Usuário</h4>
 <hr />
 <form asp-action="Editar" method="post">
     @await Html.PartialAsync("_Visualizar")
     <div class="row">
         <div class="col-md-12 text-right">
-            <a asp-action="Index" class="btn btn-secondary">Voltar</a>
-            <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#modalExcluir">Excluir</button>
-            <button class="btn btn-primary" type="submit">Salvar</button>
+            <a asp-action="Index" class="btn botao-secundario">Voltar</a>
+            <button class="btn botao-perigo" type="button" data-toggle="modal" data-target="#modalExcluir">Excluir</button>
+            <button class="btn botao-primario" type="submit">Salvar</button>
         </div>
     </div>
 
@@ -31,8 +31,8 @@
                     Deseja realmente excluir?
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
-                    <button type="submit" class="btn btn-primary" formnovalidate formaction="Excluir">Sim</button>
+                    <button type="button" class="btn botao-secundario" data-dismiss="modal">Não</button>
+                    <button type="submit" class="btn botao-primario" formnovalidate formaction="Excluir">Sim</button>
                 </div>
             </div>
         </div>
@@ -40,4 +40,7 @@
 </form>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+<script>
+        document.getElementById("inputCodigo").disabled = true;
+</script>
 }

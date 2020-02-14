@@ -1,4 +1,4 @@
-﻿namespace EFCoreCRUD.Models
+﻿namespace EFCoreCRUD.Models.Entidades
 {
     public class Usuario
     {

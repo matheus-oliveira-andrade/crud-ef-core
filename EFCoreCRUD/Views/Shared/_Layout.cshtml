@@ -6,12 +6,40 @@
     <title>@ViewData["Title"] - EFCoreCRUD</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        .navbar-personalizada {
+            background-color: #375a7f;
+        }
+
+        .botao-primario {
+            color: #ffffff;
+            background-color: #375a7f;
+        }
+
+        .botao-secundario {
+            color: #ffffff;
+            background-color: #444;
+        }
+
+        .botao-perigo {
+            color: #ffffff;
+            background-color: #E74C3C;
+        }
+
+        body {
+            background-color: #222;
+        }
+
+        h1, h2, h3, h4, label, p {
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3 navbar-personalizada">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">EFCoreCRUD</a>
+                <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">EFCore CRUD</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -19,7 +47,7 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="Index">Usuario</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Usuario" asp-action="Index">Usuario</a>
                         </li>
                     </ul>
                 </div>

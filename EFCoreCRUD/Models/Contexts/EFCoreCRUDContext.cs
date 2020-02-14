@@ -4,7 +4,7 @@ namespace EFCoreCRUD.Models.Contexts
 {
     public class EFCoreCRUDContext : DbContext
     {
-        public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Models.Entidades.Usuario> Usuario { get; set; }
 
         public EFCoreCRUDContext(DbContextOptions<EFCoreCRUDContext> options) : base(options)
         {
@@ -20,7 +20,7 @@ namespace EFCoreCRUD.Models.Contexts
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Usuario>(entidade =>
+            modelBuilder.Entity<Models.Entidades.Usuario>(entidade =>
             {
                 entidade.HasKey(u => u.Codigo);
                 entidade.Property(u => u.Codigo)

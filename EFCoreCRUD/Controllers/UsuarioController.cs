@@ -1,8 +1,6 @@
 ﻿using AutoMapper;
 using EFCoreCRUD.Models.Contexts;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 
 namespace EFCoreCRUD.Controllers
@@ -44,13 +42,13 @@ namespace EFCoreCRUD.Controllers
         {
             try
             {
-                var usuario = _mapper.Map<Models.Usuario>(modelo);
+                var usuario = _mapper.Map<Models.Entidades.Usuario>(modelo);
 
                 _dados.Add(usuario);
 
                 return RedirectToAction(nameof(Index));
             }
-            catch (Exception ex)
+            catch
             {
                 return View();
             }
@@ -73,7 +71,7 @@ namespace EFCoreCRUD.Controllers
         {
             try
             {
-                var usuario = _mapper.Map<Models.Usuario>(modelo);
+                var usuario = _mapper.Map<Models.Entidades.Usuario>(modelo);
 
                 _dados.Update(usuario);
 

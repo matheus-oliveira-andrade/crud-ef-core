@@ -1,42 +1,49 @@
 ﻿@model EFCoreCRUD.Models.ViewModels.Usuario
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                
-        <div class="form-group" id="divCodigo">
-            <label asp-for="Codigo" class="control-label"></label>
-            <input asp-for="Codigo" class="form-control"  />
-            <span asp-validation-for="Codigo" class="text-danger"></span>
+        <div class="row">
+            <div class="form-group col-md-3" id="divCodigo">
+                <label asp-for="Codigo" class="control-label"></label>
+                <input asp-for="Codigo" class="form-control" id="inputCodigo"/>
+                <span asp-validation-for="Codigo" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="Idade" class="control-label"></label>
+                <input asp-for="Idade" class="form-control" />
+                <span asp-validation-for="Idade" class="text-danger"></span>
+            </div>
         </div>
-        <div class="form-group">
-            <label asp-for="Nome" class="control-label"></label>
-            <input asp-for="Nome" class="form-control" />
-            <span asp-validation-for="Nome" class="text-danger"></span>
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label asp-for="Endereco" class="control-label"></label>
+                <input asp-for="Endereco" class="form-control" />
+                <span asp-validation-for="Endereco" class="text-danger"></span>
+            </div>  
         </div>
-        <div class="form-group">
-            <label asp-for="Idade" class="control-label"></label>
-            <input asp-for="Idade" class="form-control" />
-            <span asp-validation-for="Idade" class="text-danger"></span>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="Telefone" class="control-label"></label>
+                <input asp-for="Telefone" class="form-control" />
+                <span asp-validation-for="Telefone" class="text-danger"></span>
+            </div>
         </div>
-        <div class="form-group">
-            <label asp-for="Endereco" class="control-label"></label>
-            <input asp-for="Endereco" class="form-control" />
-            <span asp-validation-for="Endereco" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Email" class="control-label"></label>
-            <input asp-for="Email" class="form-control" />
-            <span asp-validation-for="Email" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Telefone" class="control-label"></label>
-            <input asp-for="Telefone" class="form-control" />
-            <span asp-validation-for="Telefone" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="InfoComplentares" class="control-label"></label>
-            <textarea asp-for="InfoComplentares" class="form-control"></textarea>
-            <span asp-validation-for="InfoComplentares" class="text-danger"></span>
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label asp-for="InfoComplentares" class="control-label"></label>
+                <textarea asp-for="InfoComplentares" class="form-control" style="min-height: 150px;"></textarea>
+                <span asp-validation-for="InfoComplentares" class="text-danger"></span>
+            </div>
         </div>
     </div>
 </div>

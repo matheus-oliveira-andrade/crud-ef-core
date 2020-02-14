@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace EFCoreCRUD.Models.Dados
 {
@@ -16,25 +15,25 @@ namespace EFCoreCRUD.Models.Dados
             _context = context;
         }
 
-        public List<Models.Usuario> List()
+        public List<Models.Entidades.Usuario> List()
         {
             return _context.Usuario.ToList();
         }
 
-        public List<Models.Usuario> ListById(int codigo)
+        public List<Models.Entidades.Usuario> ListById(int codigo)
         {
             var usuario = _context.Usuario.Where(u => u.Codigo == codigo).ToList();
 
             return usuario;
         }
 
-        public void Add(Models.Usuario usuario)
+        public void Add(Models.Entidades.Usuario usuario)
         {
             _context.Usuario.Add(usuario);
             _context.SaveChanges();
         }
 
-        public void Update(Models.Usuario usuario)
+        public void Update(Models.Entidades.Usuario usuario)
         {
             _context.Update(usuario);
             _context.SaveChanges();
