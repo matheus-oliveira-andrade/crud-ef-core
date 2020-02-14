@@ -18,16 +18,17 @@ namespace EFCoreCRUD.Controllers
             _mapper = mapper;
         }
 
-        // GET: Usuario
-        public ActionResult Index()
+        [HttpGet]
+        public IActionResult Index()
         {
             return RedirectToAction(nameof(Listar));
         }
 
+        [HttpGet]
         public IActionResult Listar()
         {
             var usuarios = _dados.List();
-           
+
             return View(_mapper.Map<List<Models.ViewModels.Usuario>>(usuarios));
         }
 
@@ -37,7 +38,6 @@ namespace EFCoreCRUD.Controllers
             return View();
         }
 
-        // POST: Usuario/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Inserir(Models.ViewModels.Usuario modelo)
@@ -50,7 +50,7 @@ namespace EFCoreCRUD.Controllers
 
                 return RedirectToAction(nameof(Index));
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return View();
             }
@@ -58,19 +58,24 @@ namespace EFCoreCRUD.Controllers
 
         [HttpGet]
         // GET: Usuario/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Editar(int codigo)
         {
-            return View();
+            var usuario = _dados.ListById(codigo)[0];
+            var modelo = _mapper.Map<Models.ViewModels.Usuario>(usuario);
+
+            return View(modelo);
         }
 
         // POST: Usuario/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Editar(int codigo, Models.ViewModels.Usuario modelo)
         {
             try
             {
-                // TODO: Add update logic here
+                var usuario = _mapper.Map<Models.Usuario>(modelo);
+
+                _dados.Update(usuario);
 
                 return RedirectToAction(nameof(Index));
             }
@@ -81,26 +86,11 @@ namespace EFCoreCRUD.Controllers
         }
 
         // GET: Usuario/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Excluir(int codigo)
         {
-            return View();
-        }
+            _dados.Delete(codigo);
 
-        // POST: Usuario/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction(nameof(Listar));
         }
     }
 }

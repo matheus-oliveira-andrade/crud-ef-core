@@ -21,6 +21,13 @@ namespace EFCoreCRUD.Models.Dados
             return _context.Usuario.ToList();
         }
 
+        public List<Models.Usuario> ListById(int codigo)
+        {
+            var usuario = _context.Usuario.Where(u => u.Codigo == codigo).ToList();
+
+            return usuario;
+        }
+
         public void Add(Models.Usuario usuario)
         {
             _context.Usuario.Add(usuario);
@@ -35,7 +42,7 @@ namespace EFCoreCRUD.Models.Dados
 
         public void Delete(int codigo)
         {
-            var usuario = _context.Usuario.FirstOrDefault(u => u.Codigo == codigo);
+            var usuario = ListById(codigo)[0];   
 
             if (usuario != null)
             {

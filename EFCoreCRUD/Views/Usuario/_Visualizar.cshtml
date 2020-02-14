@@ -1,12 +1,11 @@
 ﻿@model EFCoreCRUD.Models.ViewModels.Usuario
-
 <div class="row">
     <div class="col-md-4">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 
-        <div class="form-group">
+        <div class="form-group" id="divCodigo">
             <label asp-for="Codigo" class="control-label"></label>
-            <input asp-for="Codigo" class="form-control" />
+            <input asp-for="Codigo" class="form-control"  />
             <span asp-validation-for="Codigo" class="text-danger"></span>
         </div>
         <div class="form-group">
